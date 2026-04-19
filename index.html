@@ -6,6 +6,9 @@
 <body>
 <script>
 var correctAnswer=0;
+var a=0;
+var b=0;
+var c=0;
 function newQuestion() {
 var a=Math.floor(Math.random() * 10)+1;
 var b=Math.floor(Math.random() * 100)+1;
@@ -28,12 +31,12 @@ document.getElementById("answerSpot").value="";
 }
 }
 </script>
-<script>
-newQuestion();
-</script>
 <h1>Completing the Square practice</h1>
 <h3>Enter your answer as a whole number or a decimal rounded to 2 decimal places.</h3>
 <p id="question">Ethan has the equation y=x<sup>2</sup>+4x+3. Help her find the x coordinate of the vertex.</p>
+<script>
+newQuestion();
+</script>
 <input id="answerSpot">
 <button id="submit" onclick="checkAnswer()">Make Ethan Proud</button>
 <p id="status"></p>
