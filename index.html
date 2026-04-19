@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<script>
+var correctAnswer=0;
+function newQuestion() {
+var a=Math.floor(Math.random() * 10)+1;
+var b=Math.floor(Math.random() * 100)+1;
+var c=Math.floor(Math.random() * 2100)+1;
+document.getElementById("question").innerHTML=`Ethan has the equation y=${a}x<sup>2</sup>+${b}x+${c}. Help her find the x coordinate of the vertex.`;
+correctAnswer=Number((-b/(2*a)).toFixed(2));
+}
+
+function checkAnswer() {
+var givenAnswer=Number(document.getElementById("answerSpot").value);
+if (givenAnswer==correctAnswer) {
+document.getElementById("status").innerText="Correct!";
+newQuestion();
+document.getElementById("answerSpot").value="";
+}
+else {
+document.getElementById("status").innerText=`Incorrect! Ethan has gooned! The correct answer was ${correctAnswer}!`;
+newQuestion();
+document.getElementById("answerSpot").value="";
+}
+}
+</script>
+<script>
+newQuestion();
+</script>
+<h1>Completing the Square practice</h1>
+<h3>Enter your answer as a whole number or a decimal rounded to 2 decimal places.</h3>
+<p id="question">Ethan has the equation y=x<sup>2</sup>+4x+3. Help her find the x coordinate of the vertex.</p>
+<input id="answerSpot">
+<button id="submit" onclick="checkAnswer()">Make Ethan Proud</button>
+<p id="status"></p>
+</body>
+</html>
+
+
